@@ -2,4 +2,11 @@
 
 A simple Node.js application to test my knowledge
 
-![alt text](https://github.com/arthur-es/calculadora-imc/blob/master/javascript/img/calculadora_imc_print.png?raw=true)
+LIST OF COMMANDS:
+- list
+- add
+- read
+- delete
+
+*list command
+![alt text](https://raw.githubusercontent.com/arthur-es/notes-app/master/imgs/4.png)
