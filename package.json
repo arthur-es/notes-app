@@ -1,0 +1,23 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js application to test my knowledge",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthur-es/notes-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arthur-es/notes-app/issues"
+  },
+  "homepage": "https://github.com/arthur-es/notes-app#readme",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "yargs": "^15.0.2"
+  }
+}
