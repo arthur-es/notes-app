@@ -31,16 +31,25 @@ const deleteNote = (title) => {
 
 const listNotes = () => {
     const notes = loadNotes();
-    if (notes.length == 0) {
-        console.log(chalk.blueBright.inverse("You don't have any notes yet."));
-        console.log(chalk.magentaBright(`You can create one using the "add" command.`));
-    } else {
+    if (!isEmpty()) {
         console.log(chalk.blueBright.inverse("Your notes: "));
         notes.forEach(note => {
             console.log(chalk.gray.inverse.italic.bold(note.title));
         });
     }
 };
+
+const readNote = (title) => {
+    if (!isEmpty()) {
+        const notes = loadNotes();
+        const noteFound = notes.find((note) => note.title == title);
+        if (noteFound) {
+            console.log(chalk.magenta.inverse.italic(`Your note "${title}" says:`) + " " + chalk.bgBlueBright(`${noteFound.body}`));
+        } else {
+            console.log(chalk.red(`Note "${title}" does not exist.`));
+        }
+    }
+}
 
 const loadNotes = () => {
     try {
@@ -49,6 +58,17 @@ const loadNotes = () => {
         return notes;
     } catch (e) {
         return [];
+    }
+}
+
+const isEmpty = () => {
+    const notes = loadNotes();
+    if (notes.length == 0) {
+        console.log(chalk.blueBright.inverse("You don't have any notes yet."));
+        console.log(chalk.magentaBright(`You can create one using the "add" command.`));
+        return true;
+    } else {
+        return false;
     }
 }
 
@@ -61,5 +81,6 @@ const saveNotes = (notes) => {
 module.exports = {
     addNote,
     listNotes,
-    deleteNote
+    deleteNote,
+    readNote
 };

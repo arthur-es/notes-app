@@ -1,5 +1,5 @@
 const yargs = require("yargs");
-const { addNote, listNotes, deleteNote } = require("./notes");
+const { addNote, deleteNote, listNotes, readNote } = require("./notes");
 
 //Create command to add a note
 yargs.command({
@@ -36,6 +36,22 @@ yargs.command({
     },
     handler(argv) {
         deleteNote(argv.title);
+    }
+});
+
+//Create command to read a note
+yargs.command({
+    command: "read",
+    describe: "Read a note.",
+    builder: {
+        title: {
+            describe: "The note's title.",
+            type: "string",
+            demandOption: true
+        }
+    },
+    handler(argv) {
+        readNote(argv.title);
     }
 });
 
