@@ -77,7 +77,6 @@ const saveNotes = (notes) => {
     fs.writeFileSync("../data/notes.json", dataJSON);
 }
 
-
 module.exports = {
     addNote,
     listNotes,
