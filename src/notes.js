@@ -53,7 +53,7 @@ const readNote = (title) => {
 
 const loadNotes = () => {
     try {
-        const dataBuffer = fs.readFileSync("notes.json");
+        const dataBuffer = fs.readFileSync("../data/notes.json");
         const notes = JSON.parse(dataBuffer.toString());
         return notes;
     } catch (e) {
@@ -74,7 +74,7 @@ const isEmpty = () => {
 
 const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes);
-    fs.writeFileSync("notes.json", dataJSON);
+    fs.writeFileSync("../data/notes.json", dataJSON);
 }
 
 
