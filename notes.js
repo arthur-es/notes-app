@@ -15,6 +15,14 @@ const addNote = (title, body) => {
     }
 };
 
+const listNotes = () => {
+    console.log(chalk.blueBright.inverse("Your notes: "));
+    const notes = loadNotes();
+    notes.forEach(note => {
+        console.log(chalk.gray.inverse.italic.bold(note.title));
+    });
+};
+
 const loadNotes = () => {
     try {
         const dataBuffer = fs.readFileSync("notes.json");
@@ -32,5 +40,7 @@ const saveNotes = (notes) => {
 
 
 module.exports = {
-    addNote
+    addNote,
+    listNotes
+
 };
